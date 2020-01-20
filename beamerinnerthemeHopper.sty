@@ -6,11 +6,14 @@
 \useasboundingbox(0,0) rectangle(\the\paperwidth,\the\paperheight);
 
 \node[anchor=south west] (dept) at (1,8)
-{\MakeUppercase{United States Naval Academy}};
+{\textrm{\textsc{\MakeUppercase{United States Naval Academy}}}};
 \draw[thick, cyan] (0.2,8) -- (16,8);
 \draw[thin, black] (0.5,2) -- (0.5,8.5);
 \node[anchor=north west] (dept) at (1,8)
-{Weapons, Robotics, and Control Engineering};
+{\textrm{\textsc{Weapons, Robotics, and Control Engineering}}};
+\node[anchor=north west, opacity=0.2] (deptshadow) at (1.02,7.98)
+{\textrm{\textsc{Weapons, Robotics, and Control Engineering}}};
+
 
 \node[inner sep=0pt, anchor=north east] (wrcelogo) at (15.8,9) 
 {\includegraphics[width=1.75cm]{wrce-logo.png}};
@@ -26,7 +29,7 @@
 \begin{tikzpicture}
 \useasboundingbox(0,0) rectangle(\the\paperwidth,\the\paperheight);
 \draw[thick, black] (0.2,8) -- (16,8);
-\draw[thick, cyan] (0.3,7.95) -- (16,7.95);
+\draw[thick, cyan] (0.3,7.975) -- (16,7.975);
 \node[inner sep=0pt, anchor=north east] (wrcelogo) at (15.8,9) 
 {\includegraphics[width=1cm]{wrce-logo.png}};
 \draw[thin, black] (0.2,0.5) -- (15.8,0.5);
@@ -58,6 +61,9 @@
                    {
                      \begin{beamercolorbox}{title page header}
                        \usebeamerfont{title}\inserttitle\par%
+                     \end{beamercolorbox}
+                     \begin{beamercolorbox}{title page header}
+                       \usebeamerfont{title}\insertsubtitle\par%
                      \end{beamercolorbox}
                      \begin{beamercolorbox}{author}
                        \usebeamerfont{author}\insertauthor%
