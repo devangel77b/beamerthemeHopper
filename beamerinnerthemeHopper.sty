@@ -1,12 +1,60 @@
 \mode<presentation>
 
+\newcommand{\settitlebg}{
 \setbeamertemplate{background}{
-  add crest
-  add chapel
+\begin{tikzpicture}
+\useasboundingbox(0,0) rectangle(\the\paperwidth,\the\paperheight);
+
+\node[anchor=south west] (dept) at (1,8)
+{\MakeUppercase{United States Naval Academy}};
+\draw[thick, cyan] (0.2,8) -- (16,8);
+\draw[thin, black] (0.5,2) -- (0.5,8.5);
+\node[anchor=north west] (dept) at (1,8)
+{Weapons, Robotics, and Control Engineering};
+
+\node[inner sep=0pt, anchor=north east] (wrcelogo) at (15.8,9) 
+{\includegraphics[width=1.75cm]{wrce-logo.png}};
+
+\node[inner sep=0pt, anchor=south east, opacity=0.2] (chapel) at (16,0)
+{\includegraphics[width=4.89cm]{chapel-modified.png}};
+\end{tikzpicture}
+}
+}
+
+\newcommand{\setslidebg}{
+\setbeamertemplate{background}{
+\begin{tikzpicture}
+\useasboundingbox(0,0) rectangle(\the\paperwidth,\the\paperheight);
+\draw[thick, black] (0.2,8) -- (16,8);
+\draw[thick, cyan] (0.3,7.95) -- (16,7.95);
+\node[inner sep=0pt, anchor=north east] (wrcelogo) at (15.8,9) 
+{\includegraphics[width=1cm]{wrce-logo.png}};
+\draw[thin, black] (0.2,0.5) -- (15.8,0.5);
+\end{tikzpicture}
+}
+}
+
+\newcommand{\setblankbg}{
+\setbeamertemplate{background}{
+\begin{tikzpicture}
+\useasboundingbox(0,0) rectangle(\the\paperwidth,\the\paperheight);
+\end{tikzpicture}
+}
+}
+
+
+\newcommand{\setchapelbg}{
+\setbeamertemplate{background}{
+\begin{tikzpicture}
+\useasboundingbox(0,0) rectangle(\the\paperwidth,\the\paperheight);
+\node[inner sep=0pt, anchor=south east, opacity=0.2] (chapel) at (16,0)
+{\includegraphics[width=4.89cm]{chapel-modified.png}};
+\end{tikzpicture}
+}
 }
 
 % title page
-\defbeamertemplate*{title page}{SevernaPark}[1][]%
+\defbeamertemplate*{title page}{Hopper}[1][]%
                    {
                      \begin{beamercolorbox}{title page header}
                        \usebeamerfont{title}\inserttitle\par%
